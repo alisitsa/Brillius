@@ -1,0 +1,10 @@
+# Файлы
+*.psd
+*.cfg
+*.ini
+.DS_Store
+*.supported
+
+# Папки
+input/
+node_modules/
