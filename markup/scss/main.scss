@@ -38,13 +38,13 @@ $media-expressions: (
 body{
 	text-shadow: 0 1px rgba(0,0,0,.2);
 	h1 {
-		font-family: "Oxygen";
+		font-family: $headings-font-family;
 		text-align: center;
 		color: #fff;
 	}
 	.title {
 		display: table;
-		font-family: "Coustard";
+		font-family: $font-family-sans-serif;
 		font-size: 22px;
 		line-height: 44px;
 		margin: 0 auto;
@@ -96,7 +96,7 @@ body{
 }
 .navbar-nav > li > a {
 	font-size: 16px;
-	font-family: "Oxygen";
+	font-family: $font-family-base;
 	padding: 30px 14px 33px 14px;
 	text-transform: uppercase;
 	text-shadow: 0 1px rgba(0,0,0,.20)
@@ -104,12 +104,7 @@ body{
 .nav .active a, .nav .active a:hover,
 .nav > li > a:hover, .nav > li > a:focus {
 	color: #fff;
-	
-}
-.nav .active a {
-	.home  {
-		background: #2f87cb;
-	}
+	background: none;
 }
 
 .home {
@@ -180,10 +175,8 @@ body{
 	}
 }
 .title__decor {
-
 	display: inline-block;
 	position: relative;
-	
 	@include media('>=screen-sm') {
 		padding: 0 20px 12px;
 		&:before,
@@ -195,15 +188,177 @@ body{
 			border: solid #fff;
 			opacity: 0.4;
 			border-width: 4px 0;
-	
 			left: 100%;
 			right: -999px;
 			margin: 2px 0 0;
-			
 		}
 		&:before {
 		right: 100%;
 		left: -999px;
 		}
 	}	
+}
+.web {
+	display: inline-block;
+	position: relative;
+	width: 230px;
+	height: 230px;
+	z-index: 0;
+	&:after {
+	    content: '';
+	    position: absolute;
+	    border: 7px solid #fff;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    top: 0;
+	    border-radius: 50%;
+	}
+	span {
+		content: '';
+		position: absolute;
+		width: 110px;
+		font-size: 18px;
+		font-family: "Oxygen";
+		font-weight: bold;
+		text-align: center;
+		top: 100px;
+		right: 66px;
+	}
+}
+.skills {
+	text-align: center;
+}
+.test__decor {
+	overflow: hidden;
+	margin-top: 50px;
+	margin-bottom: 18px;
+}
+.line__decor {
+	display: inline-block;
+	position: relative;
+	@include media('>=screen-sm') {
+		padding: 0 33px 12px 15px;
+		&:after {
+			@include ycenter;
+			content: '';
+			top: 40%;
+			height: 1px;
+			border: solid #fff;
+			opacity: 0.2;
+			border-width: 1px 0;
+			left: 100%;
+			right: -999px;
+			margin: 2px 0 0;
+		}
+	}	
+}
+.test__left {
+	width: 539px;
+	float: left;
+}
+.test__right {
+	width: 539px;
+	float: right;
+}
+.test {
+	margin: 0;
+	padding: 24px 0 0 30px;
+	background: url(../images/quotes.png) no-repeat;
+	font-size: 18px;
+	line-height: 24px;
+	font-family: $font-family-base;
+	text-shadow: 0 1px rgba(0,0,0,.1);
+	p {
+		font-weight: 400;
+	}
+	span {
+		font-weight: bold;
+		float: right;
+	}
+}
+
+.team {
+	overflow: hidden;
+	position: relative;
+	height: 872px;
+	z-index: 0;
+	background: #72af3c;
+	border-bottom: 1px solid #fff;
+	h1 {
+		padding-top: 100px;
+		margin: 0 0 22px;
+		overflow: hidden;
+	}
+	h4 {
+		font-family: $font-family-base;
+	}
+	p {
+		font-family: $font-family-base;
+		line-height: 20px;
+	}
+}
+.team__face {
+	padding: 0 35px;
+}
+.team__img {
+	width: 230px;
+	height: 230px;
+	background: #fff;
+	border: 7px solid #fff;
+	border-radius: 50%;
+	text-align: center;
+}
+.team__decor {
+	overflow: hidden;
+	margin: 27px 0 9px;
+	text-align: center;
+
+}
+.team-line__decor {
+	display: inline-block;
+	position: relative;
+	@include media('>=screen-sm') {
+		padding: 0 14px 0;
+		&:before,
+		&:after {
+			@include ycenter;
+			content: '';
+			top: 45%;
+			height: 2px;
+			border: solid #fff;
+			opacity: 0.4;
+			border-width: 2px 0;
+			left: 100%;
+			right: -999px;
+			margin: 2px 0 0;
+		}
+		&:before {
+		right: 100%;
+		left: -999px;
+		}
+	}	
+}
+.icons {
+	height: 29px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	.icon__bg {
+		display: inline-block;
+		width: 29px;
+		height: 29px;
+		background: rgba(0,0,0,.26);
+		border-radius: 50%;
+		svg {
+			color: #fff;
+		}
+	}
+}
+.icon {
+	position: relative;
+	width: 18px;
+	height: 18px;
+	top: 5px;
+	z-index: 0;
 }

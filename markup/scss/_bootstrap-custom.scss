@@ -4,7 +4,7 @@ $body-bg:						#fff;
 $text-color:					#fff;
 
 // color-name: http://name-of-color.com/
-$brand-primary:					#0badaa;
+$brand-primary:					#fff;
 $headings-color:				$brand-primary;
 
 $font-size-base:				14px;
@@ -29,6 +29,7 @@ $border-radius-base:			18px;
 $border-radius-large:			0;
 $border-radius-small:			0;
 
-$font-family-sans-serif:		'avantetckmedium', "Oxygen", "Coustard", Arial, sans-serif;
-$font-family-sans-serif-alt:	'avanteroughlight', Arial, sans-serif;
+$font-family-base:              "Oxygen" , Arial, sans-serif;
+$font-family-sans-serif:	    "Coustard", Arial, sans-serif;
+$font-family-sans-serif-alt:	Arial, sans-serif;
 $headings-font-family:			$font-family-sans-serif;
