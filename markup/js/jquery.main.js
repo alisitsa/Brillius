@@ -84,3 +84,29 @@ $(function(){
 	    }); 
 	});
 })
+$(function() {
+  $('#main-nav a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      var bgColor = target.css('backgroundColor');
+
+      $('#main-nav a[href*="#"]').css('backgroundColor', '');
+      $(this).css('backgroundColor', bgColor);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 50);
+        return true;
+      }
+    }
+  });
+});
+$(function(){
+	$('#accordion').slideAccordion({
+		opener:'>a.opener',
+		slider:'>div.slide',
+		collapsible:false,
+		animSpeed: 300
+	});
+});

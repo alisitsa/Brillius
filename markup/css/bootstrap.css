@@ -1544,23 +1544,23 @@ h6 .small, .h6 small,
 }
 
 h1, .h1 {
-  font-size: 73px;
+  font-size: 72px;
 }
 
 h2, .h2 {
-  font-size: 49px;
+  font-size: 48px;
 }
 
 h3, .h3 {
-  font-size: 31px;
+  font-size: 30px;
 }
 
 h4, .h4 {
-  font-size: 23px;
+  font-size: 22px;
 }
 
 h5, .h5 {
-  font-size: 19px;
+  font-size: 18px;
 }
 
 h6, .h6 {
@@ -1963,7 +1963,7 @@ pre code {
 
 @media (min-width: 1200px) {
   .container {
-    width: 1200px;
+    width: 1070px;
   }
 }
 
