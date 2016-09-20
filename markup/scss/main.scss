@@ -608,7 +608,7 @@ body{
 	padding: 16px 0 19px 31px;
 	background: none;
 	border-bottom: 1px solid rgba(#fff,.2);
-	.opener:after {
+	&:after {
 		content: " ";
 		position: absolute;
 		width: 17px;
@@ -620,7 +620,7 @@ body{
 	.slide {
 		padding-top: 27px;
 	}
-	a{
+	a {
 		display: block;
 		font-size: 18px;
 		text-decoration: none;

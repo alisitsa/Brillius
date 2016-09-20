@@ -704,7 +704,7 @@ body .title {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.accordion li .opener:after {
+.accordion li:after {
   content: " ";
   position: absolute;
   width: 17px;
