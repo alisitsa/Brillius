@@ -38,33 +38,40 @@ $media-expressions: (
 body{
 	text-shadow: 0 1px rgba(0,0,0,.2);
 	h1 {
-		font-size: 20px;
+		font-size: 30px;
 		font-family: $headings-font-family;
 		text-align: center;
 		color: #fff;
-		@include media('>=screen-sm') {
+		@include media('>=screen-xs') {
+			font-size: 48px;
+		}
+		@include media('>=screen-md') {
 			font-size: 72px;
 		}
 	}
 	.title {
 		display: table;
 		font-family: $font-family-sans-serif;
-		font-size: 22px;
-		line-height: 44px;
+		font-size: 14px;
+		line-height: 22px;
 		margin: 0 auto;
-		margin-bottom: 67px;
+		margin-bottom: 40px;
 		padding: 1px 31px 1px 30px;
 		background: rgba(0,0,0,.26);
 		border-radius: 23px;
 		text-align: center;
 		font-weight: 400;
+		@include media('>=screen-sm') {
+
+		}
+		@include media('>=screen-md') {
+		font-size: 22px;
+		line-height: 44px;
+		margin-bottom: 67px;
+		padding: 1px 31px 1px 30px;
+		}
 	}
-	@include media('>=screen-sm') {
-		
-	}
-	@include media('>=screen-md') {
-		
-	}
+	
 }
 .header-container {
 	max-width: 940px;
@@ -98,8 +105,8 @@ body{
 	}
 }
 .navbar-right {
-	@include media('>=screen-md') {
-		margin: 0 auto;
+	@include media('>=screen-sm') {
+		margin-right: 10px;
 	}
 	@include media('>=screen-lg') {
 		margin-right: 6px;
@@ -108,28 +115,34 @@ body{
 .navbar-nav > li > a {
 	font-size: 16px;
 	font-family: $font-family-base;
-	padding: 27px 14px 35px 14px;
 	text-transform: uppercase;
-	text-shadow: 0 1px rgba(0,0,0,.20)
+	text-shadow: 0 1px rgba(0,0,0,.20);
+	@include media('>=screen-sm') {
+		padding: 27px 10px 35px 10px;
+	}
+	@include media('>=screen-md') {
+		padding: 27px 14px 35px 14px;
+	}
 }
-.nav .active a, .nav .active a:hover,
-.nav > li > a:hover, .nav > li > a:focus {
+.nav .active a, .nav .active a:hover{
 	color: #fff;
+	background: none;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+	color: #a2a2a2;
 	background: none;
 }
 .nav-select {
 	display: block;
 	width: 300px;
-	margin-top: 10px;
-	margin: 0 auto;
+	margin: 10px auto 0;
 	font-size: 14px;
 	font-family: $font-family-base;
 	color: #000;
-	padding: 4px 14px 3px;
+	padding: 0 30px 6px 10px;
 	border-radius: 15px;
 	text-transform: uppercase;
 	text-shadow: 0 1px rgba(0,0,0,.20);
-	text-transform: uppercase;
 }
 .home {
 	overflow: hidden;
@@ -138,8 +151,11 @@ body{
 	background: #2f87cb;
 	border-bottom: 1px solid #fff;
 	h1 {
-		padding-top: 158px;
-		margin: 0 0 11px;
+		padding-top: 120px;
+		margin: 0 0 12px;
+		@include media('>=screen-md'){
+			padding-top: 158px;
+		}
 	}
 }
 .home .slick-arrow {
@@ -154,10 +170,8 @@ body{
 	width: 47px;
 	height: 47px;
 	border-radius: 50%;
-	@include media('>=screen-sm') {
-		left: 310px;
-		top: 270px;
-	}
+	bottom: 20px;
+	left: 0;
 	@include media('>=screen-md') {
 		left: -47px;
 		top: -60px;
@@ -168,10 +182,8 @@ body{
 	width: 47px;
 	height: 47px;
 	border-radius: 50%;
-	@include media('>=screen-sm') {
-		right: 310px;
-		top: 270px;
-	}
+	bottom: 20px;
+	right: 0;
 	@include media('>=screen-md') {
 		right: -47px;
 		top: -60px;
@@ -183,7 +195,7 @@ body{
 .slick-list {
 	margin: 0;
 }
-/*------------------*/
+
 .about {
 	overflow: hidden;
 	position: relative;
@@ -200,12 +212,12 @@ body{
 	display: inline-block;
 	position: relative;
 	@include media('>=screen-sm') {
-		padding: 0 16px 11px;
+		padding: 0 20px 11px;
 		&:before,
 		&:after {
 			@include ycenter;
 			content: '';
-			top: 43%;
+			top: 45%;
 			height: 11px;
 			border: solid #fff;
 			opacity: 0.4;
@@ -251,6 +263,9 @@ body{
 .skills {
 	text-align: center;
 }
+.testimonials {
+	padding-bottom: 67px;
+}
 .test__decor {
 	overflow: hidden;
 	margin-top: 44px;
@@ -277,11 +292,11 @@ body{
 	}	
 }
 .test__left {
-	width: 528px;
+	display: block;
 	float: left;
 }
 .test__right {
-	width: 528px;
+	display: block;
 	float: right;
 }
 .test {
@@ -298,20 +313,20 @@ body{
 	span {
 		font-weight: bold;
 		float: right;
-		padding-top: 6px;
+		padding-top: 7px;
+		padding-right: 7px;
 	}
 }
 
 .team {
 	overflow: hidden;
 	position: relative;
-	height: 872px;
 	z-index: 0;
 	background: #72af3c;
 	border-bottom: 1px solid #fff;
 	h1 {
-		padding-top: 77px;
-		margin: 0 0 12px;
+		padding-top: 75px;
+		margin: 0 0 13px;
 		overflow: hidden;
 	}
 	h4 {
@@ -323,8 +338,16 @@ body{
 		line-height: 20px;
 	}
 }
+.team__group {
+	padding-top: 4px;
+	padding-bottom: 113px;
+}
 .team__face {
-	padding-right: 23px;
+	padding-right: 22px;
+	padding-bottom: 20px;
+	@include media('>=screen-md') {
+		padding-bottom: 0;
+	}
 }
 .team__img {
 	width: 230px;
@@ -333,10 +356,15 @@ body{
 	border: 7px solid #fff;
 	border-radius: 50%;
 	text-align: center;
+	display: block;
+	margin: 0 auto;
+	@include media('>=screen-md') {
+		display: table;
+	}
 }
 .team__decor {
 	overflow: hidden;
-	margin: 15px 0 0;
+	margin: 11px 0 0 -1px;
 	text-align: center;
 
 }
@@ -344,7 +372,7 @@ body{
 	display: inline-block;
 	position: relative;
 	@include media('>=screen-sm') {
-		padding: 0 13px 0;
+		padding: 0 17px 0;
 		&:before,
 		&:after {
 			@include ycenter;
@@ -394,12 +422,11 @@ body{
 .portfolio {
 	overflow: hidden;
 	position: relative;
-	height: 1484px;
 	z-index: 0;
 	background: #cc9031;
 	border-bottom: 1px solid #fff;
 	h1 {
-		padding-top: 79px;
+		padding-top: 76px;
 		margin: 0 0 13px;
 		overflow: hidden;
 	}
@@ -407,7 +434,7 @@ body{
 
 .portfolio__nav {
 	display: block;
-	margin: -16px auto 45px;
+	margin: -16px 0 45px -39px;
 	text-align: center;
 	position: relative;
 }
@@ -424,15 +451,15 @@ body{
 		width: 10px;
 		height: 18px;
 		background: url(../images/portfolio/nav-line.png) no-repeat;
-		top: 8px;
-		right: 0;
+		top: 9px;
+		right: -8px;
 		
 	}
 	a {
 		font-size: 22px;
 		font-family: $font-family-base;
 		font-weight: bold;
-		margin: 0 37px 0 10px;
+		margin: 0 24px 0 25px;
 		padding: 0 0 4px;
 		text-shadow: 0 1px rgba(0,0,0,.20);
 		text-decoration: none;
@@ -445,6 +472,9 @@ body{
     border-top: 3px solid #ffe7c0;
     border-bottom: 3px solid #ffe7c0;
     border-radius: 0;
+}
+.portfolio__group {
+	padding-bottom: 52px;
 }
 .portfolio__img {
 	width: 230px;
@@ -459,18 +489,26 @@ body{
 .blog {
 	overflow: hidden;
 	position: relative;
-	height: 1161px;
 	z-index: 0;
 	background: #37a3c7;
 	border-bottom: 1px solid #fff;
 	h1 {
-		padding-top: 100px;
+		padding-top: 96px;
 		margin: 0 0 18px;
 		overflow: hidden;
 	}
 	h3 {
 		font-family: $font-family-base;
 	}
+}
+.blog__group {
+	margin-left: 0;
+	margin-top: -2px;
+	padding-bottom: 17px;
+}
+.blog__posts {
+	padding-left: 0;
+	padding-right: 0;
 }
 .blog-img {
 	display: block;
@@ -487,7 +525,7 @@ body{
 .blog__decor {
 	overflow: hidden;
 	padding-left: 25px;
-	margin-top: 0;
+	margin-top: 2px;
 	margin-bottom: 0;
 }
 .blog p {
@@ -504,7 +542,7 @@ body{
 	display: inline-block;
 	position: relative;
 	@include media('>=screen-sm') {
-		padding: 0 10px 0 7px;
+		padding: 0 10px 0 4px;
 		&:before,
 		&:after {
 			@include ycenter;
@@ -518,7 +556,7 @@ body{
 			right: -999px;
 			margin: 2px 0 0;
 		}
-	}	
+	}
 }
 .posts {
 	margin-top: -14px;
@@ -530,10 +568,10 @@ body{
 }
 .search {
 	.input {
-		margin: -4px 0 34px 7px;
+		margin: -4px 0 38px 4px;
 		.form-control {
 			height: 40px;
-			padding: 3px 22px 6px;
+			padding: 4px 22px 6px;
 			border-radius: 20px;
 			background-color: #297993;
 			border: 0;
@@ -544,41 +582,40 @@ body{
 .categories {
 	margin-top: 5px;
 	ul {
-		margin: -8px 0 45px;
-		padding-left: 22px;
+		margin: -12px 0 45px;
+		padding-left: 19px;
 		li {
-			padding-bottom: 5px;
+			padding-bottom: 4px;
 		}
 	}
 }
 .latest-tweets {
-	margin-top: -13px;
+	margin-top: -11px;
 	p {
-		margin: -20px 0 0;
-		padding-left: 7px;
+		margin: -21px 0 0;
+		padding-left: 4px;
 	}
 }
 
 .shortcodes {
 	overflow: hidden;
 	position: relative;
-	height: 2132px;
 	z-index: 0;
 	background: #45b591;
 	border-bottom: 1px solid #fff;
 	h1 {
-		padding-top: 91px;
-		margin: 0 0 22px;
+		padding-top: 83px;
+		margin: 0 0 12px;
 		overflow: hidden;
 	}
 	h3 {
 		font-family: $font-family-base;
-		margin-top: 12px;
+		margin-top: 5px;
 	}
 }
 .columns {
 	.row {
-		margin-bottom: 26px;
+		margin-bottom: 17px;
 		padding-right: 15px;
 		padding-left: 15px;
 	}
@@ -606,13 +643,23 @@ body{
 		}
 	}
 	.quotes {
+		position: relative;
+		display: block;
 		font-size: 18px;
 		line-height: 24px;
 		margin-top: 8px;
 		padding-top: 24px;
-		padding-left: 50px;
+		padding-left: 34px;
 		padding-right: 0;
-		background: url(../images/quotes.png) no-repeat;
+		&:before {
+			content: "";
+			position: absolute;
+			width: 21px;
+			height: 18px;
+			top: 10px;
+			left: 10px;
+			background: url(../images/quotes.png) no-repeat;
+		}
 	}	
 }
 .accordion{
@@ -665,7 +712,70 @@ body{
 		padding-top: 25px;
 	}
 }
-
+.info {
+	padding-top: 47px;
+	margin-bottom: 35px;
+}
+.info__heading {
+	padding: 0;
+	.heading__left {
+		padding: 17px 20px 27px 24px;
+		border-left: 4px solid rgba(#fff,.4);
+		background-color: rgba(#fff,.1);
+		margin-right: 20px;
+		margin-left: 15px;
+	}
+	.heading__right {
+		padding: 17px 20px 27px 24px;
+		border-left: 4px solid rgba(#fff,.4);
+		background-color: rgba(#fff,.1);
+		margin-left: 20px;
+	}
+	h4 {
+		font-family: $font-family-base;
+	}
+}
+.btn-toolbar {
+	padding-top: 20px;
+	.btn {
+		background: rgba(#000,.26);
+		border: none;
+	}
+	.btn-sm {
+		padding: 5px 32px 9px 29px;
+		margin-right: 4px;
+		font-size: 18px;
+		border-radius: 20px;
+	}
+	.btn-md {
+		padding: 12px 30px 15px 29px;
+		margin-right: 4px;
+		font-size: 24px;
+		border-radius: 30px;
+	}
+	.btn-lg {
+		padding: 17px 30px 22px 29px;
+		margin-right: 4px;
+		font-size: 32px;
+		border-radius: 40px;
+	}
+}
+.contacts {
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
+	background: #c6a739;
+	border-bottom: 1px solid #fff;
+	h1 {
+		padding-top: 104px;
+		margin: 0 0 22px;
+		overflow: hidden;
+	}
+	h3 {
+		font-family: $font-family-base;
+		margin-top: 12px;
+	}
+}
 
 /*.pp {
 	position: absolute;
